@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preservation of Government Information: An Information Stewardship Statement</title>
+    <meta name="description" content="Sign on to support the preservation of U.S. government information. An information stewardship statement for libraries, archives, and information professionals.">
+    <!-- Load Inter as a solid Neo-Grotesque to mimic Helvetica's clean, neutral lines -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* 
+           International Typographic Style (Swiss Style) x FreeGovInfo
+           Principles: Objective, Functional, Grid-based, Asymmetrical, High Typographic Hierarchy
+        */
+
+        :root {
+            /* FGI Heritage Colors */
+            --fgi-blue: #3e6487;
+            --fgi-blue-dark: #2c4a66;
+            
+            /* Swiss Style Palette */
+            --black: #000000;
+            --dark-gray: #1a1a1a;
+            --medium-gray: #757575;
+            --light-gray: #f2f2f2;
+            --white: #ffffff;
+            --alert: #e02424;
+            --success: #0e9f6e;
+
+            /* Typography */
+            --font-stack: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --base-font-size: 16px;
+            --modular-scale: 1.25;
+            --line-height-base: 1.4;
+            --line-height-heading: 1.1;
+
+            /* Spacing */
+            --grid-gap: 2rem;
+            --spacing-unit: 1.5rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            font-size: var(--base-font-size);
+            color: var(--dark-gray);
+            background-color: var(--white);
+            line-height: var(--line-height-base);
+            overflow-x: hidden;
+        }
+
+        /* ── Typography Framework ── */
+        h1, h2, h3, h4 {
+            color: var(--black);
+            font-weight: 900;
+            line-height: var(--line-height-heading);
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5em;
+            text-transform: none;
+        }
+        
+        h1 {
+            font-size: clamp(3rem, 6vw, 5rem);
+            margin-bottom: 0;
+            /* Very tight tracking on massive headings */
+            letter-spacing: -0.04em; 
+        }
+
+        h2 { font-size: clamp(2rem, 3.5vw, 3rem); }
+        h3 { font-size: 1.5rem; }
+        
+        p {
+            margin-bottom: 1em;
+            max-width: 65ch; /* Optimal reading measure */
+        }
+
+        .meta-text {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            color: var(--medium-gray);
+            margin-bottom: var(--spacing-unit);
+            display: block;
+        }
+
+        a {
+            color: var(--fgi-blue);
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
+            font-weight: 700;
+            transition: color 0.1s;
+        }
+
+        a:hover {
+            color: var(--black);
+            text-decoration-color: var(--black);
+        }
+
+        /* ── Layout & Grid ── */
+        .fgi-header {
+            background-color: var(--fgi-blue);
+            color: var(--white);
+            padding: var(--spacing-unit) 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            border-bottom: 2px solid var(--black);
+        }
+
+        .fgi-header a {
+            color: var(--white);
+            text-decoration: none;
+        }
+        
+        .fgi-logo-placeholder {
+            font-weight: 900;
+            font-size: 2.5rem;
+            line-height: 1;
+            letter-spacing: -0.05em;
+            border: 4px solid var(--white);
+            padding: 0.2rem 0.5rem;
+            display: inline-block;
+        }
+
+        .fgi-header-text h2 {
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-bottom: 0.2rem;
+            font-weight: 500;
+            letter-spacing: 0;
+        }
+
+        .fgi-header-text p {
+            font-size: 1rem;
+            margin: 0;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: var(--grid-gap);
+        }
+
+        /* Title Area spanning full width or massive columns */
+        .hero {
+            grid-column: 1 / -1;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--black);
+            padding-bottom: 3rem;
+        }
+
+        /* Main asymmetric 12-column grid layout */
+        .col-main {
+            grid-column: 1 / -1;
+        }
+
+        .col-side {
+            grid-column: 1 / -1;
+            background-color: var(--light-gray);
+            padding: 3rem 2rem;
+            border-left: 2px solid var(--black);
+            height: fit-content;
+        }
+
+        @media (min-width: 1024px) {
+            .col-main { grid-column: 1 / 8; }
+            .col-side { grid-column: 8 / 13; }
+        }
+
+        /* ── Strict Geometric UI Elements ── */
+        hr {
+            border: none;
+            border-top: 2px solid var(--black);
+            margin: 4rem 0;
+        }
+
+        .thick-rule {
+            border-top: 8px solid var(--black);
+        }
+
+        /* Document Embed Container */
+        .document-container {
+            width: 100%;
+            height: 850px;
+            border: 2px solid var(--black);
+            background-color: var(--white);
+            margin-top: 3rem;
+            padding: 2rem;
+        }
+        
+        .document-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        /* Step List */
+        .step-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        
+        .step {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            align-items: baseline;
+            border-top: 2px solid var(--medium-gray);
+            padding-top: 1.5rem;
+        }
+        
+        .step-num {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--fgi-blue);
+        }
+        
+        .step h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .step p {
+            margin: 0;
+            color: var(--medium-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Forms */
+        .swiss-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--black);
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea,
+        .form-group select {
+            border: 2px solid var(--black);
+            background-color: var(--white);
+            padding: 1rem;
+            font-family: var(--font-stack);
+            font-size: 1rem;
+            color: var(--black);
+            border-radius: 0; /* Strict no rounded corners */
+            transition: outline 0.1s, border-color 0.1s;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="email"]:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: 2px solid var(--fgi-blue);
+            outline-offset: 2px;
+            border-color: var(--fgi-blue);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background-color: var(--black);
+            color: var(--white);
+            border: none;
+            padding: 1.25rem 2rem;
+            font-family: var(--font-stack);
+            font-size: 1.1rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 0; /* Strict no rounded corners */
+            transition: background-color 0.15s, color 0.15s;
+        }
+
+        .btn:hover, .btn:focus {
+            background-color: var(--fgi-blue);
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .btn:disabled {
+            background-color: var(--medium-gray);
+            cursor: not-allowed;
+        }
+
+        /* Status Messages */
+        .form-msg {
+            display: none;
+            padding: 1.5rem;
+            font-weight: 700;
+            border: 4px solid;
+            margin-bottom: 1.5rem;
+        }
+        .form-msg.visible { display: block; }
+        .form-msg.success { border-color: var(--success); color: var(--success); }
+        .form-msg.error { border-color: var(--alert); color: var(--alert); }
+
+        /* Signatories Data Grid */
+        .signatories-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            border-top: 4px solid var(--black);
+            padding-top: 2rem;
+        }
+
+        .sig-entry {
+            border-left: 4px solid var(--medium-gray);
+            padding-left: 1rem;
+        }
+
+        .sig-name {
+            font-weight: 900;
+            font-size: 1.1rem;
+            color: var(--black);
+        }
+
+        .sig-org {
+            font-weight: 500;
+            color: var(--dark-gray);
+            margin-top: 0.25rem;
+        }
+
+        .sig-date {
+            font-size: 0.85rem;
+            color: var(--medium-gray);
+            margin-top: 0.5rem;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        .site-footer {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 4rem 2rem;
+            margin-top: 6rem;
+        }
+
+        .site-footer a {
+            color: var(--white);
+            text-decoration-color: var(--fgi-blue);
+        }
+        
+        .site-footer a:hover {
+            color: var(--fgi-blue);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- FGI Branding Header -->
+    <header class="fgi-header">
+        <a href="https://freegovinfo.info" target="_blank" rel="noopener">
+            <div class="fgi-logo-placeholder">FGI</div>
+        </a>
+        <div class="fgi-header-text">
+            <h2>FREE GOVERNMENT INFORMATION</h2>
+            <p>Because government information needs to be free</p>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <!-- Hero Section -->
+        <div class="hero">
+            <span class="meta-text">March 12, 2026</span>
+            <h1>Preservation of<br>Government Information</h1>
+            <p style="font-size: 1.6rem; font-weight: 500; margin-top: 1.5rem; max-width: 850px; line-height: 1.3;">
+                Government information is far more fragile than it should be. This is a call for library and archives professionals to act.
+            </p>
+        </div>
+
+        <!-- Left Column: The Statement / Document -->
+        <main class="col-main">
+            <h2>The Statement</h2>
+            <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
+                Drafted at the <a href="https://blog.archive.org/information-stewardship-forum-2026-building-shared-practices-for-the-preservation-and-access-of-government-information/" target="_blank" rel="noopener">Information Stewardship Forum 2026</a> in San Francisco and published in conjunction with <a href="https://freegovinfo.info" target="_blank" rel="noopener">Free Government Information (FGI)</a>. Authored by James Jacobs and Jim Jacobs.
+            </p>
+            <p style="font-size: 1rem; color: var(--medium-gray);">
+                <a href="https://docs.google.com/document/d/e/2PACX-1vRGDfZQSQqv4HylBNwHm_kiO_p84VWRGZErlehqyqVuT8pRkz2uqvjay39UHIsvts6HUPVITPR9bUMR/pub" target="_blank" rel="noopener">Open full document &nearr;</a>
+            </p>
+
+            <div class="document-container">
+                <iframe src="https://docs.google.com/document/d/e/2PACX-1vRGDfZQSQqv4HylBNwHm_kiO_p84VWRGZErlehqyqVuT8pRkz2uqvjay39UHIsvts6HUPVITPR9bUMR/pub?embedded=true" title="Preservation of Government Information: An Information Stewardship Statement"></iframe>
+            </div>
+
+            <hr>
+
+            <!-- Signatories Section -->
+            <h2 id="signatories">Signatories</h2>
+            <p style="margin-bottom: 2rem;">Individuals and organizations standing in solidarity.</p>
+            
+            <div id="sig-grid" class="signatories-list">
+                <!-- Javascript will populate this from signatories.json -->
+                <p>Loading signatories data...</p>
+            </div>
+        </main>
+
+        <!-- Right Column: Call to Action & Form -->
+        <aside class="col-side">
+            <span class="meta-text" style="color: var(--fgi-blue);">Take Action</span>
+            <h2 style="font-size: 2.5rem; line-height: 1;">Support the Infrastructure</h2>
+
+            <ul class="step-list">
+                <li class="step">
+                    <span class="step-num">01</span>
+                    <div>
+                        <h3>Review the Document</h3>
+                        <p>Read the guiding principles for the Digital Preservation Infrastructure.</p>
+                    </div>
+                </li>
+                <li class="step">
+                    <span class="step-num">02</span>
+                    <div>
+                        <h3>Add Your Endorsement</h3>
+                        <p>Complete the form below to pledge your support and solidarity.</p>
+                    </div>
+                </li>
+            </ul>
+
+            <hr style="border-top-color: var(--medium-gray); margin: 2rem 0;">
+
+            <h3>Sign the Pledge</h3>
+
+            <div id="form-success" class="form-msg success">
+                Submission received. Thank you. Your name will be verified and added to the public record.
+            </div>
+
+            <div id="form-error" class="form-msg error">
+                A system error occurred. Please try again or email jrjacobs@stanford.edu directly.
+            </div>
+
+            <form id="pledge-form" class="swiss-form" action="https://api.web3forms.com/submit" method="POST">
+                <!-- Web3Forms Access Key: Add yours from web3forms.com -->
+                <input type="hidden" name="access_key" value="d8d0bc56-7ff6-4067-a38c-c60f5e71e754">
+                <input type="hidden" name="subject" value="New signatory: Preservation of Government Information">
+                <input type="hidden" name="from_name" value="Information Stewardship Statement Signatories">
+                <input type="checkbox" name="botcheck" style="display: none;">
+
+                <div class="form-group">
+                    <label for="signing_as">Signing as</label>
+                    <select id="signing_as" name="signing_as" required style="cursor: pointer;">
+                        <option value="individual">Individual</option>
+                        <option value="organization">Organization</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Full name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="organization_name">Organization name</label>
+                    <input type="text" id="organization_name" name="organization_name">
+                </div>
+
+                <div class="form-group">
+                    <label for="title_or_role">Title / role</label>
+                    <input type="text" id="title_or_role" name="title_or_role">
+                </div>
+
+                <div class="form-group">
+                    <label for="public_display_name">Public display name</label>
+                    <input type="text" id="public_display_name" name="public_display_name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Notes</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+
+                <div class="form-group" style="flex-direction: row; align-items: flex-start; gap: 0.75rem;">
+                    <input type="checkbox" id="publication_consent" name="publication_consent" value="yes" required style="margin-top: 0.25rem; width: 1.2rem; height: 1.2rem; cursor: pointer;">
+                    <label for="publication_consent" style="text-transform: none; font-weight: 500; font-size: 0.95rem; cursor: pointer;">
+                        I agree to have my name and/or organization listed publicly as a signatory.
+                    </label>
+                </div>
+
+                <div class="form-group" style="flex-direction: row; align-items: flex-start; gap: 0.75rem;">
+                    <input type="checkbox" id="org_authorized" name="org_authorized" value="yes" style="margin-top: 0.25rem; width: 1.2rem; height: 1.2rem; cursor: pointer;">
+                    <label for="org_authorized" style="text-transform: none; font-weight: 500; font-size: 0.95rem; cursor: pointer;">
+                        I confirm I am authorized to sign on behalf of this organization.
+                    </label>
+                </div>
+
+                <button type="submit" id="submit-btn" class="btn" style="margin-top: 1rem;">Submit</button>
+            </form>
+
+        </aside>
+
+    </div>
+
+    <footer class="site-footer">
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <p style="font-size: 0.9rem; opacity: 0.8;">
+                James Jacobs and Jim Jacobs. San Francisco, Spring 2026.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Logic -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Form Handler
+        const form = document.getElementById('pledge-form');
+        const successEl = document.getElementById('form-success');
+        const errorEl = document.getElementById('form-error');
+        const submitBtn = document.getElementById('submit-btn');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            successEl.classList.remove('visible');
+            errorEl.classList.remove('visible');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+
+            try {
+                const formData = new FormData(form);
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+
+                if (result.success) {
+                    successEl.classList.add('visible');
+                    form.reset();
+                } else {
+                    errorEl.classList.add('visible');
+                }
+            } catch (err) {
+                console.error(err);
+                errorEl.classList.add('visible');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Endorsement';
+            }
+        });
+
+        // Signatories Loader
+        const sigGrid = document.getElementById('sig-grid');
+
+        async function loadSignatories() {
+            try {
+                const resp = await fetch('signatories.json');
+                if (!resp.ok) throw new Error('File not found');
+                const signatories = await resp.json();
+
+                sigGrid.innerHTML = signatories.map(function(s) {
+                    const dateStr = s.date
+                        ? new Date(s.date + 'T00:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+                        : '';
+                    
+                    return '<div class="sig-entry">'
+                        + '<div class="sig-name">' + escapeHtml(s.name) + '</div>'
+                        + (s.affiliation ? '<div class="sig-org">' + escapeHtml(s.affiliation) + '</div>' : '')
+                        + (dateStr ? '<div class="sig-date">' + dateStr + '</div>' : '')
+                        + '</div>';
+                }).join('');
+            } catch (err) {
+                sigGrid.innerHTML = '<p>No signatories data available at this time.</p>';
+            }
+        }
+
+        function escapeHtml(str) {
+            const div = document.createElement('div');
+            div.appendChild(document.createTextNode(str));
+            return div.innerHTML;
+        }
+
+        loadSignatories();
+    });
+    </script>
+</body>
+</html>
